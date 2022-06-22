@@ -1,0 +1,23 @@
+FATAL [main] 2022-06-14T10:17:27,519 MessageCenter.INTERNAL.repast.simphony.runtime.RepastBatchMain - Fatal error starting repast.simphony simphony.
+java.lang.reflect.InvocationTargetException: null
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at repast.simphony.runtime.RepastBatchMain.run(RepastBatchMain.java:101) ~[bin/:?]
+	at repast.simphony.runtime.RepastBatchMain.main(RepastBatchMain.java:118) ~[bin/:?]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 28 out of bounds for length 28
+	at cms_wheat.Cms_builder.build(Cms_builder.java:186) ~[?:?]
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41) ~[?:?]
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48) ~[?:?]
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214) ~[?:?]
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1) ~[?:?]
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292) ~[?:?]
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295) ~[?:?]
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295) ~[?:?]
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288) ~[?:?]
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212) ~[?:?]
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383) ~[?:?]
+	at repast.simphony.batch.BatchRunner.run(BatchRunner.java:198) ~[?:?]
+	at repast.simphony.batch.BatchInit.run(BatchInit.java:73) ~[?:?]
+	... 6 more
