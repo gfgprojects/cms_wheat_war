@@ -128,9 +128,8 @@ public class Producer {
 // end Russian ban
 
 
-/*
 /////start Russia-Ukraine war
-
+/*
 		if(name.equals("Russian Federation") || name.equals("Eastern Europe")){
 //Timing guerra 
 //inizio marzo
@@ -142,9 +141,8 @@ System.out.println(RepastEssentials.GetTickCount()+" time "+name+" exportFlag: "
 			}
 
 		}
-
-// end Russia-Ukraine war
 */
+// end Russia-Ukraine war
 
 
 

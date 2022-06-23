@@ -69,7 +69,7 @@ Parameters params = RunEnvironment.getInstance().getParameters();
 	autarkyAtTheBeginning=false;
 	productionCycleLength=12;
 	exportPolicyDecisionInterval=1;
-	importPolicyDecisionInterval=12;
+	importPolicyDecisionInterval=1;
 	globalProduction=50000000;
 	producersPricesMemoryLength=12;
 	minimumImportQuantity=100;
@@ -85,7 +85,7 @@ Parameters params = RunEnvironment.getInstance().getParameters();
 	priceThresholdToDecreaseTargetProduction=2.0;
 	startUsingInputsFromTimeTick=24; //192
 //	batchStoppingTime=460; //se startUsing=199 allora 600, o 460 in differential evolution
-	batchStoppingTime=313; //313  505
+	batchStoppingTime=325; //313  505
 	shareOfDemandToBeMoved=(double)params.getValue("shareOfDemandToBeMoved");
 	percentageOfPriceMarkDownInNewlyAccessibleMarkets=(double)params.getValue("percentageOfPriceMarkDownInNewlyAccessibleMarkets");
 	transportCostsTuner=(double)params.getValue("transportCostsTuner");

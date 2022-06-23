@@ -147,9 +147,8 @@ public class Buyer {
 			if(Cms_builder.autarkyAtTheBeginning && RepastEssentials.GetTickCount()==1){
 				importAllowed=false;
 			}
-/*
 /////start Russia-Ukraine war
-
+/*
 		if(name.equals("Russian Federation") || name.equals("Eastern Europe")){
 //Timing guerra 
 //inizio marzo
@@ -161,9 +160,8 @@ System.out.println(RepastEssentials.GetTickCount()+" time "+name+" importFlag: "
 			}
 
 		}
-
-// end Russia-Ukraine war
 */
+// end Russia-Ukraine war
 		}
 		if(Cms_builder.verboseFlag){System.out.println("         buyer:    "+name+" importAllowed "+importAllowed);}
 
