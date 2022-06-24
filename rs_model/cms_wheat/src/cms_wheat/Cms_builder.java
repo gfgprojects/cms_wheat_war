@@ -36,6 +36,7 @@ import org.geotools.referencing.GeodeticCalculator;
 
 public class Cms_builder implements ContextBuilder<Object> {
 	public static boolean verboseFlag=false;
+	public static boolean withWar=false;
 	public static boolean autarkyAtTheBeginning=false;
 
 	public static boolean allowDemadsShiftAccordingToGapToTarget=false;
@@ -85,14 +86,18 @@ Parameters params = RunEnvironment.getInstance().getParameters();
 	priceThresholdToDecreaseTargetProduction=2.0;
 	startUsingInputsFromTimeTick=24; //192
 //	batchStoppingTime=460; //se startUsing=199 allora 600, o 460 in differential evolution
-	batchStoppingTime=325; //313  505
+	batchStoppingTime=325; //313  505 325
 	shareOfDemandToBeMoved=(double)params.getValue("shareOfDemandToBeMoved");
 	percentageOfPriceMarkDownInNewlyAccessibleMarkets=(double)params.getValue("percentageOfPriceMarkDownInNewlyAccessibleMarkets");
 	transportCostsTuner=(double)params.getValue("transportCostsTuner");
 	demandFunctionInterceptTuner=(double)params.getValue("demandFunctionInterceptTuner");
 	demandFunctionSlopeTuner=(double)params.getValue("demandFunctionSlopeTuner");
 	demandFunctionReferencePrice=(double)params.getValue("demandFunctionReferencePrice");
-RandomHelper.setSeed(-1866858664);
+	withWar=(boolean)params.getValue("withWar");
+//RandomHelper.setSeed(-1866858664);
+RandomHelper.setSeed(88833006);
+
+//	System.out.println("withWar "+withWar);
 //shareOfDemandToBeMovedToLowerPrice=shareOfDemandToBeMoved;
 //shareOfDemandToBeMovedFromHigherPrice=shareOfDemandToBeMoved;
 //	System.out.println("InterceptTuner "+demandFunctionInterceptTuner);

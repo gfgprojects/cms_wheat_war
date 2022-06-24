@@ -129,7 +129,8 @@ public class Producer {
 
 
 /////start Russia-Ukraine war
-/*
+
+if(Cms_builder.withWar){
 		if(name.equals("Russian Federation") || name.equals("Eastern Europe")){
 //Timing guerra 
 //inizio marzo
@@ -141,7 +142,7 @@ System.out.println(RepastEssentials.GetTickCount()+" time "+name+" exportFlag: "
 			}
 
 		}
-*/
+	}
 // end Russia-Ukraine war
 
 
