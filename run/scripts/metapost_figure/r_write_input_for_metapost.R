@@ -1,6 +1,6 @@
-cimp<-read.csv("../change_import_nino2013.csv")
+cimp<-read.csv("../change_monthly_import_war2016.csv")
 names(cimp)<-c("Area","2012","2013","2014","2013","2014")
-cpri<-read.csv("../change_price_nino2013.csv")
+cpri<-read.csv("../change_monthly_price_war2016.csv")
 names(cpri)<-c("Area","2012","2013","2014","2013","2014")
 effects.nino<-read.csv("effects_nino.csv")
 names(effects.nino)<-c("Area","ninoeffect")
@@ -28,8 +28,8 @@ weighted.effects.nino[8,2]<-effects.nino[8,2]*(6)/12
 
 
 net.cimp<-cimp
-net.cimp[,3]<-round(cimp[,3]+weighted.effects.nino[,1],digits=2)
-net.cimp[,4]<-round(cimp[,4]+weighted.effects.nino[,2],digits=2)
+#net.cimp[,3]<-round(cimp[,3]+weighted.effects.nino[,1],digits=2)
+#net.cimp[,4]<-round(cimp[,4]+weighted.effects.nino[,2],digits=2)
 
 filename<-paste("mpinput_areas_effects.mp",sep="")
 write(paste("area1:=\"",effects.nino[1,1],"\";",sep=""),filename)
@@ -63,11 +63,11 @@ write(paste("fo",j,":=",round(weighted.effects.nino[j,1],digit=2),";",sep=""),fi
 write(paste("so",j,":=",round(weighted.effects.nino[j,2],digit=2),";",sep=""),filename,append=T)
 }
 
-for(i in 3:6){
-	filename<-paste("mpinput",i-2,"nino.mp",sep="")
+for(i in 4:13){
+	filename<-paste("mpinput",i-3,"nino.mp",sep="")
 	write("",filename)
 	for(j in 1:11){
-		ratiotw<-cpri[j,i]/12
+		ratiotw<-cpri[j,i]/100
 		if(ratiotw>1){ratiotw<-1}
 		if(ratiotw<(-1)){ratiotw<-(-1)}
 		write(paste("rpf",j,":=",round(ratiotw,digits=2),";",sep=""),filename,append=T)
@@ -87,10 +87,10 @@ for(i in 3:6){
 	}
 }
 
-cimp<-read.csv("../change_import_nina2013.csv")
-names(cimp)<-c("Area","2012","2013","2014","2013","2014")
-cpri<-read.csv("../change_price_nina2013.csv")
-names(cpri)<-c("Area","2012","2013","2014","2013","2014")
+cimp<-read.csv("../change_import_war2016.csv")
+names(cimp)<-c("Area","2015","2016","2017")
+cpri<-read.csv("../change_price_war2016.csv")
+names(cpri)<-c("Area","2015","2016","2017")
 
 weighted.effects.nina<-matrix(0,nrow=11,ncol=2)
 weighted.effects.nina[3,1]<-effects.nina[3,2]*(12-7)/12
@@ -99,8 +99,8 @@ weighted.effects.nina[8,1]<-effects.nina[8,2]*(12-7)/12
 weighted.effects.nina[8,2]<-effects.nina[8,2]*(7)/12
 
 net.cimp<-cimp
-net.cimp[,3]<-cimp[,3]+weighted.effects.nina[,1]
-net.cimp[,4]<-cimp[,4]+weighted.effects.nina[,2]
+#net.cimp[,3]<-cimp[,3]+weighted.effects.nina[,1]
+#net.cimp[,4]<-cimp[,4]+weighted.effects.nina[,2]
 
 write(paste("fa1:=",round(weighted.effects.nina[1,1],digit=2),";",sep=""),filename,append=T)
 write(paste("sa1:=",round(weighted.effects.nina[1,2],digit=2),";",sep=""),filename,append=T)
@@ -110,11 +110,11 @@ write(paste("sa",j,":=",round(weighted.effects.nina[j,2],digit=2),";",sep=""),fi
 }
 
 
-for(i in 3:6){
+for(i in 3:4){
 	filename<-paste("mpinput",i-2,"nina.mp",sep="")
 	write("",filename)
 	for(j in 1:11){
-		ratiotw<-cpri[j,i]/12
+		ratiotw<-cpri[j,i]/100
 		if(ratiotw>1){ratiotw<-1}
 		if(ratiotw<(-1)){ratiotw<-(-1)}
 		write(paste("rpf",j,":=",round(ratiotw,digits=2),";",sep=""),filename,append=T)
